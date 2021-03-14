@@ -1,0 +1,12 @@
+# Scale font and line width (dpi) by changing the size! It will always display stretched.
+set terminal svg size 500,500 enhanced fname 'arial'  fsize 10 butt solid
+set output 'out.svg'
+
+# Key means label...
+set key inside bottom right
+set xlabel 'X (Width)'
+set ylabel 'Y (Height)'
+set xrange [0:1000]
+set yrange [0:1000]
+set title 'Grenade'
+plot "data.txt" using 2:3 title '45 degrees' with lines, "data2.txt" using 2:3 title '80 degrees' with lines
